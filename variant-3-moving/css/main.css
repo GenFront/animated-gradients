@@ -1,0 +1,5 @@
+/* Base */
+@import url('./base/_reset.css');
+
+/* Components */
+@import url('./components/_gradient.css');
