@@ -63,7 +63,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container">
         <h1>🎨 Анимированные градиенты</h1>
         <p>Выберите вариант для просмотра:</p>
         
@@ -83,6 +83,83 @@
                 <p>Анимация через background-position</p>
             </a>
         </div>
+    </div> -->
+    
+    <div class="container">
+        <h1>🎨 Анимированные градиенты</h1>
+        <p>Выберите вариант для просмотра:</p>
+        
+        <div class="projects-grid">
+            <a href="variant-1-modern/" target="_blank" class="project-card">
+                <div class="click-indicator">→</div>
+                <h3>🚀 Современный</h3>
+                <p>Анимация через @property</p>
+                <span class="hint">Нажмите чтобы открыть</span>
+            </a>
+            
+            <a href="variant-2-crossbrowser/" target="_blank" class="project-card">
+                <div class="click-indicator">→</div>
+                <h3>🌐 Кроссбраузерный</h3>
+                <p>Анимация через hue-rotate</p>
+                <span class="hint">Нажмите чтобы открыть</span>
+            </a>
+            
+            <a href="variant-3-moving/" target="_blank" class="project-card">
+                <div class="click-indicator">→</div>
+                <h3>🌀 Движущийся</h3>
+                <p>Анимация через background-position</p>
+                <span class="hint">Нажмите чтобы открыть</span>
+            </a>
+        </div>
+        
+        <!-- <div class="footer-hint">
+            💡 <strong>Совет:</strong> Нажмите на любой блок выше, чтобы увидеть анимацию градиента. 
+            Каждый вариант откроется в новой вкладке.
+        </div> -->
     </div>
+<script>
+    // Добавляем звук клика (опционально)
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.project-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Создаем эффект "пульсации" при клике
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+            
+            card.addEventListener('mouseenter', function() {
+                this.style.cursor = 'pointer';
+            });
+        });
+        
+        // Показываем дополнительную подсказку через 3 секунды
+        setTimeout(() => {
+            const hint = document.createElement('div');
+            hint.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(0,0,0,0.8);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 20px;
+                font-size: 14px;
+                z-index: 1000;
+                animation: fadeInOut 10s ease-in-out;
+            `;
+            hint.textContent = '👆 Нажимайте на карточки для просмотра анимаций';
+            document.body.appendChild(hint);
+            
+            setTimeout(() => {
+                hint.remove();
+            }, 3000);
+        }, 3000);
+    });
+</script>
 </body>
 </html>
