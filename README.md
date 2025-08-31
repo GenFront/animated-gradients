@@ -4,7 +4,7 @@
 
 ## 🚀 Демо
 
-[Посмотреть живые демо на GitHub Pages](https://YOUR_USERNAME.github.io/animated-gradients/)
+[Посмотреть живые демо на GitHub Pages] https://github.com/GenFront/animated-gradients
 
 ## 📁 Варианты реализации
 
